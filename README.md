@@ -19,13 +19,12 @@ Execution:
   - /Hostfully
 
   - In this folder you need to see some files, like a folder with name cypress, a file with the name README, a file with the name cypress.config.js, a file with the name package and some others files and folders. 
-  - lets continue to the next step
 
 - 3 – Test Execution
   - To run the tests, select the IDE you like, navigate to your project folder and run one of the following command:
 
 - npx cypress open (if you want to see the tests running with a visual report)
-  - Select E2E testing (Should appear a texto "Configured)
+  - Select E2E testing (Should appear a texto "Configured")
   - Select the browser you want (I recomend Chrome)
   - Select Start E2E testing in chrome
   - A folder with this name should be displayed: cypress\e2e
