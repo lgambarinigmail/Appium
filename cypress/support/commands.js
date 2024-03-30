@@ -29,5 +29,50 @@ Cypress.Commands.add('add_computer_fail', () => {
     })
 
     cy.get('.btn').contains('Cancel').click()
+    
 })
 
+// edit
+
+Cypress.Commands.add('edit_computer', () => {
+    cy.get('.computers.zebra-striped a').eq(7).click()
+    fillComputerForm('test edicao', '2021-03-26', '2022-03-26', 'IBM')
+    cy.get('.btn.primary').click()
+    cy.get('.alert-message.warning').should('contain', 'has been updated') 
+})
+
+// remove
+
+Cypress.Commands.add('delet_computer', () => {
+    cy.get('.computers.zebra-striped a').eq(4).click()
+    cy.get('.btn.danger').click({ force: true })
+    cy.get('.alert-message.warning').should('contain', 'has been deleted')
+})
+
+const searchTerm = 'Nokia' 
+
+Cypress.Commands.add('delete_computer_search', () => {
+
+    cy.get('#searchbox').type(searchTerm)
+    cy.get('#searchsubmit').click()
+    cy.get('.computers.zebra-striped tbody').should('contain', searchTerm)
+    cy.get('.computers.zebra-striped a').eq(4).click()
+    cy.get('.btn.danger').click({ force: true })
+    cy.get('.alert-message.warning').should('contain', 'has been deleted')
+})
+
+Cypress.Commands.add('search_name', () => {
+
+    cy.get('#searchbox').type(searchTerm)
+    cy.get('#searchsubmit').click()
+    cy.get('.computers.zebra-striped tbody').should('contain', searchTerm)
+})
+
+const searchTermInvalid = 'aabbccddee'
+
+Cypress.Commands.add('empty_search', () => {
+
+    cy.get('#searchbox').type(searchTermInvalid)
+    cy.get('#searchsubmit').click()
+    cy.get('.well').should('contain', 'Nothing to display')
+})
