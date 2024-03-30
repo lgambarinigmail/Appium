@@ -29,7 +29,6 @@ Cypress.Commands.add('add_computer_fail', () => {
     })
 
     cy.get('.btn').contains('Cancel').click()
-    
 })
 
 // edit
@@ -75,4 +74,53 @@ Cypress.Commands.add('empty_search', () => {
     cy.get('#searchbox').type(searchTermInvalid)
     cy.get('#searchsubmit').click()
     cy.get('.well').should('contain', 'Nothing to display')
+})
+
+// general validations
+
+Cypress.Commands.add('sort_validation', () => {
+
+    cy.get('.next a').click()
+    cy.url().should('eq', 'https://computer-database.gatling.io/computers?p=1')
+})
+
+Cypress.Commands.add('validation_home_top_button', () => {
+
+    cy.get('.fill a').click()
+    cy.url().should('eq', 'https://computer-database.gatling.io/computers')
+})
+
+Cypress.Commands.add('validation_qtd_computers', () => {
+
+    cy.get('#main h1').should('contain', '574 computers found')
+})
+
+Cypress.Commands.add('validation_computer_name', () => {
+
+    cy.get('.computers.zebra-striped a').eq(5).should('contain', 'AN/FSQ-32')
+    cy.get('.computers.zebra-striped a').eq(0).click()
+    cy.get('.computers.zebra-striped a').eq(5).should('contain', 'lenovo thinkpad x61s')
+
+})
+Cypress.Commands.add('validation_introduced', () => {
+
+    cy.get('.computers.zebra-striped tbody tr td').eq(9).should('contain', '01 Jan 1958')
+    cy.get('.computers.zebra-striped a').eq(1).click()
+    cy.get('.computers.zebra-striped a').eq(1).click() // como não tem nenhum item com data para validar na 1 tentativa, é necessario clicar novamente para aparecer um item com data.
+    cy.get('.computers.zebra-striped tbody td ').eq(5).should('contain', '09 Feb 2011')
+})
+
+Cypress.Commands.add('validation_discontinued', () => {
+
+    cy.get('.computers.zebra-striped a').eq(2).click()
+    cy.get('.computers.zebra-striped a').eq(2).click() // como não tem nenhum item com data para validar na 1 tentativa, é necessario clicar novamente para aparecer um item com data.
+    cy.get('.computers.zebra-striped tbody td ').eq(2).should('contain', '02 Mar 2011')
+})
+
+Cypress.Commands.add('validation_company', () => {
+
+    cy.get('.computers.zebra-striped tbody tr td').eq(7).should('contain', 'IBM')
+    cy.get('.computers.zebra-striped a').eq(3).click()
+    cy.get('.computers.zebra-striped a').eq(3).click() // como não tem nenhum item com data para validar na 1 tentativa, é necessario clicar novamente para aparecer um item com data.
+    cy.get('.computers.zebra-striped tbody td ').eq(7).should('contain', 'Xerox')
 })
