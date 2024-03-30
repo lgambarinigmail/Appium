@@ -12,13 +12,16 @@ If you have any questions about installation, there is complete documentation on
 
 Execution:
 1 - Clone or download this repository on your local machine:
-git clone:
+git clone https://github.com/lgambarinigmail/Hostfully.git
 
 2 - Navigate to the project directory:
-CD /
+CD /Hostfully-main
+
+In this folder you need to see some files, like a folder with name cypress, a file with the name README, a file with the name cypress.config.js, a file with the name package and some others files and folders. 
+If you get here, lets continue to the next step
 
 3 – Test Execution
-To run the tests, run the following command:
+To run the tests, select the IDE you like and run the following command:
 
 - npx cypress open (if you want to see the tests running with a visual report)
 Or
