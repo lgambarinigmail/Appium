@@ -57,5 +57,3 @@ describe('Hostfully QA Engineer Cypress exercise', () => {
         cy.validation_company()
     });
 })
-
-//como a aplicação é apenas read only, não é possivel fazer validação de exclusão e edição de forma correta e completa. Então as validações ficam basicamente com valores fixos.

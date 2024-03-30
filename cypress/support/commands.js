@@ -106,14 +106,14 @@ Cypress.Commands.add('validation_introduced', () => {
 
     cy.get('.computers.zebra-striped tbody tr td').eq(9).should('contain', '01 Jan 1958')
     cy.get('.computers.zebra-striped a').eq(1).click()
-    cy.get('.computers.zebra-striped a').eq(1).click() // como não tem nenhum item com data para validar na 1 tentativa, é necessario clicar novamente para aparecer um item com data.
+    cy.get('.computers.zebra-striped a').eq(1).click()
     cy.get('.computers.zebra-striped tbody td ').eq(5).should('contain', '09 Feb 2011')
 })
 
 Cypress.Commands.add('validation_discontinued', () => {
 
     cy.get('.computers.zebra-striped a').eq(2).click()
-    cy.get('.computers.zebra-striped a').eq(2).click() // como não tem nenhum item com data para validar na 1 tentativa, é necessario clicar novamente para aparecer um item com data.
+    cy.get('.computers.zebra-striped a').eq(2).click()
     cy.get('.computers.zebra-striped tbody td ').eq(2).should('contain', '02 Mar 2011')
 })
 
@@ -121,6 +121,6 @@ Cypress.Commands.add('validation_company', () => {
 
     cy.get('.computers.zebra-striped tbody tr td').eq(7).should('contain', 'IBM')
     cy.get('.computers.zebra-striped a').eq(3).click()
-    cy.get('.computers.zebra-striped a').eq(3).click() // como não tem nenhum item com data para validar na 1 tentativa, é necessario clicar novamente para aparecer um item com data.
+    cy.get('.computers.zebra-striped a').eq(3).click()
     cy.get('.computers.zebra-striped tbody td ').eq(7).should('contain', 'Xerox')
 })
