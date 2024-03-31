@@ -33,4 +33,10 @@ Execution:
   - npx cypress run (if you want to see the tests running in headless mode)
 
 If you have any questions about running the automation, there is complete documentation on the subject:
- - https://docs.cypress.io/guides/getting-started/opening-the-app
+   - https://docs.cypress.io/guides/getting-started/opening-the-app
+   
+- Questions 4 and 5
+  - The proposal application was read-only, so it was not possible to add, edit or remove a computer. This was a problem validating all the snarios.
+  - I chose not to use TypeScript in such basic scenarios. It would be just to  add more complexity and not bringing performance and maintenance improvements.
+  - I choose to separate the files and codes for a better understanding of the code and a better visualization of the process in general, ex - General validations
+  - All scenarios have a summary of the tests for a better understanding of the project
