@@ -1,5 +1,6 @@
 import { fillComputerForm } from '../support/utils'
 
+// This group of scenarios are focus on add a new computer, so we have  add computer, then a failing scenario
 // add
 Cypress.Commands.add('add_computer', () => {
     cy.get('#add').click()
@@ -31,8 +32,8 @@ Cypress.Commands.add('add_computer_fail', () => {
     cy.get('.btn').contains('Cancel').click()
 })
 
+// This group is focus on editing an already registered computer
 // edit
-
 Cypress.Commands.add('edit_computer', () => {
     cy.get('.computers.zebra-striped a').eq(7).click()
     fillComputerForm('test edicao', '2021-03-26', '2022-03-26', 'IBM')
@@ -40,8 +41,8 @@ Cypress.Commands.add('edit_computer', () => {
     cy.get('.alert-message.warning').should('contain', 'has been updated') 
 })
 
+// This group is focus on removing a existing computer, we have a scenario that goes direct in the main screen and another one focus on the search of a already existing computer
 // remove
-
 Cypress.Commands.add('delet_computer', () => {
     cy.get('.computers.zebra-striped a').eq(4).click()
     cy.get('.btn.danger').click({ force: true })
@@ -60,6 +61,8 @@ Cypress.Commands.add('delete_computer_search', () => {
     cy.get('.alert-message.warning').should('contain', 'has been deleted')
 })
 
+// This group is focus on searching like  empty search and search by name
+//Search
 Cypress.Commands.add('search_name', () => {
 
     cy.get('#searchbox').type(searchTerm)
@@ -76,8 +79,8 @@ Cypress.Commands.add('empty_search', () => {
     cy.get('.well').should('contain', 'Nothing to display')
 })
 
+// This group is focus on general validations like pagination, quantity sort, name sort, introduced sort, discontinued sort, company sort and home button
 // general validations
-
 Cypress.Commands.add('sort_validation', () => {
 
     cy.get('.next a').click()
@@ -91,7 +94,6 @@ Cypress.Commands.add('validation_home_top_button', () => {
 })
 
 Cypress.Commands.add('validation_qtd_computers', () => {
-
     cy.get('#main h1').should('contain', '574 computers found')
 })
 
