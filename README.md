@@ -24,8 +24,8 @@ Execution:
   - To run the tests, select the IDE you like, navigate to your project folder and run one of the following command:
 
 - npx cypress open (if you want to see the tests running with a visual report)
-  - Select E2E testing (Should appear a texto "Configured")
-  - Select the browser you want (I recomend Chrome)
+  - Select E2E testing (Should appear a text "Configured")
+  - Select the browser you want (I recommend Chrome)
   - Select Start E2E testing in chrome
   - A folder with this name should be displayed: cypress\e2e
   - select the file spec.cy.js
