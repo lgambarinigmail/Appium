@@ -1,4 +1,4 @@
-describe('Hostfully QA Engineer Cypress exercise', () => {
+describe('Cypress exercise', () => {
 
     // Here we have a beforeEach that focus on visiting our baseUrl in every scenario
     beforeEach(() => {
